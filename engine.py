@@ -46,7 +46,9 @@ class Engine:
         delta_drag = C_beta_1*self.M**2*(self.P_a/101325)*self.Beta**1.5
         T_o_fan = T*(1+1/eff_fan*((self.Prf)**((gamma-1)/gamma)-1))
         P_o_fan = P*self.Prf
-        return P_o_fan,T_o_fan,delta_drag
+        Cp_fan = gamma*self.R_uni/28.8/(gamma-1)
+        work = Cp_fan*(T_o_fan-T)
+        return P_o_fan,T_o_fan,delta_drag, work
 
     def compressor(self,P,T):
         gamma = 1.38
