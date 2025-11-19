@@ -120,7 +120,7 @@ class Engine:
         u_e = math.sqrt(2*Cp_cN*(T_o_mix-T_e))
         return T_e,P_o_mix,u_e
     
-    def fuelpump(self,P_burner):
+    def fuelpump(self,P_o_burner):
         rho_f = 780
         P_o_inlet = 104000
         P_o_e = 550000+P_o_burner
